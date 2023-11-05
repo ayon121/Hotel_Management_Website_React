@@ -1,19 +1,42 @@
 
 // import PropTypes from 'prop-types';
-import {FcGoogle } from 'react-icons/fc';
-import loginimg from  '../../assets/christian-lambert-vmIWr0NnpCQ-unsplash (1).jpg'
+import { FcGoogle } from 'react-icons/fc';
+import loginimg from '../../assets/login.jpg'
 import { Link } from 'react-router-dom';
-const Login = ()=> {
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/Authproviders';
+// react toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const Login = () => {
+    const { loginUser } = useContext(AuthContext)
+    const handlelogin = e => {
+        e.preventDefault()
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email')
+        const password = form.get('password')
+        loginUser(email, password)
+            .then(
+                toast("Login Success")
+                
+            )
+            .catch(error => toast(error.message))
+
+    }
+
     return (
         <div className="flex  justify-center w-full h-screen items-center font-Hind px-3">
-            <div className=" max-w-4xl mx-auto rounded-2xl flex h-5/6" >
+            <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3 mt-11" >
                 {/* login form */}
                 <div className="flex flex-col  py-1 px-8  border-l-4 border-[#3fb43b] h-full">
-                    <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-[#3fb43b]">Login Now</h1>
-                    <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="email" name="email" id="" placeholder="email" />
-                    <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="password" name="password" id=""  placeholder="password"/>
-                     <input className="btn border-2 border-[#3fb43b] hover:bg-[#3fb43b] hover:text-white" type="submit" value="Login" />
-                    
+                    <form className='flex flex-col' onSubmit={handlelogin}>
+                        <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-[#3fb43b]">Login Now</h1>
+                        <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="email" name="email"  placeholder="email" />
+                        <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="password" name="password" placeholder="password" />
+                        <input className="btn border-2 border-[#3fb43b] hover:bg-[#3fb43b] hover:text-white" type="submit" value="Login" />
+
+                    </form>
                     <div className="text-center ">
                         <p className="text-[#3fb43b] pb-1">or login using google</p>
                         <button className="btn border-2 border-[#3fb43b] w-full hover:bg-[#3fb43b] hover:text-white"><FcGoogle></FcGoogle> Google</button>
@@ -23,16 +46,17 @@ const Login = ()=> {
                 </div>
                 {/* wishes */}
                 <div className=" bg-[#3fb43b] rounded-r-2xl hidden md:flex">
-                   <img className='h-full w-full rounded-r-2xl' src={loginimg} alt="hotel img" />
+                    <img className='h-full w-full rounded-r-2xl' src={loginimg} alt="hotel img" />
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
 
 Login.propTypes = {
-    
+
 };
 
 export default Login;

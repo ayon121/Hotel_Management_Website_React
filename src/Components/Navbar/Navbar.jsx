@@ -1,16 +1,26 @@
 
 // import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { FaHotel } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Providers/Authproviders';
 const Navbar = () => {
-    const navlinks = <>			
+    const { user, logout } = useContext(AuthContext)
+
+    const handlelogOut = () => {
+        logout()
+            .then()
+            .catch()
+    }
+
+    const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/mybookings">My Bookings</NavLink></li>
         <li><NavLink to="/career">Career Opportunities</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
 
-  </>
+    </>
 
     return (
         <div className="navbar max-w-6xl mx-auto font-Hind px-1 md:px-3">
@@ -26,8 +36,8 @@ const Navbar = () => {
                 {/* logo */}
                 <div className="font-Hind font-bold ">
                     <h1 className=" flex items-center gap-1">
-                        <span className='text-xl md:text-3xl lg:text-4xl'>Room</span> 
-                        <span className='text-lg  md:text-2xl lg:text-3xl text-[#3fb43b]'><FaHotel></FaHotel></span> 
+                        <span className='text-xl md:text-3xl lg:text-4xl'>Room</span>
+                        <span className='text-lg  md:text-2xl lg:text-3xl text-[#3fb43b]'><FaHotel></FaHotel></span>
                         <span className="text-sm md:text-lg lg:text-xl">Vue</span>
                     </h1>
                 </div>
@@ -38,7 +48,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/login"><button className='btn'>Login</button></Link>
+                {
+                    user ? <button onClick={handlelogOut} className="btn bg-[#403F3F] text-white hover:text-black">Logout</button>
+                        :
+                        <Link to="/login">
+                            <button className="btn bg-[#403F3F] text-white hover:text-black">Login</button>
+                        </Link>
+                }
+
+        
             </div>
         </div>
     );
