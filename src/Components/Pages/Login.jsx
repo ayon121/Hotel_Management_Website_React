@@ -2,6 +2,7 @@
 // import PropTypes from 'prop-types';
 import {FcGoogle } from 'react-icons/fc';
 import loginimg from  '../../assets/christian-lambert-vmIWr0NnpCQ-unsplash (1).jpg'
+import { Link } from 'react-router-dom';
 const Login = ()=> {
     return (
         <div className="flex  justify-center w-full h-screen items-center font-Hind px-3">
@@ -16,6 +17,7 @@ const Login = ()=> {
                     <div className="text-center ">
                         <p className="text-[#3fb43b] pb-1">or login using google</p>
                         <button className="btn border-2 border-[#3fb43b] w-full hover:bg-[#3fb43b] hover:text-white"><FcGoogle></FcGoogle> Google</button>
+                        <p className='pt-2 '>Do not have a account? <Link to="/register"> <button className='text-[#3fb43b] underline'>Register Now</button></Link></p>
 
                     </div>
                 </div>
