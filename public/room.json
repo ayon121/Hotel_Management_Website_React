@@ -1,0 +1,113 @@
+[
+    {
+      "Room type": "Standard Double Room",
+      "Title": "Cozy Retreat",
+      "Price": 129,
+      "Room Size": "300 sq ft",
+      "Description": "Our Standard Double Room offers a comfortable and inviting atmosphere, perfect for a relaxing stay. This room features a plush king-size bed, modern amenities, and a private balcony with a view of the garden.",
+      "Special Offers": ["Complimentary breakfast", "Free Wi-Fi", "Early check-in and late check-out"],
+      "Stars": 3,
+      "Bath Image": "https://example.com/room1-bath.jpg",
+      "Bed Image": "https://example.com/room1-bed.jpg"
+    },
+    {
+      "Room type": "Deluxe Suite",
+      "Title": "Luxury Oasis",
+      "Price": 249,
+      "Room Size": "600 sq ft",
+      "Description": "Experience ultimate luxury in our Deluxe Suite. This spacious suite includes a separate living area, a king-size bed, a private jacuzzi, and stunning sea views from the private terrace.",
+      "Special Offers": ["Free spa access", "Complimentary champagne on arrival", "24/7 room service"],
+      "Stars": 4,
+      "Bath Image": "https://example.com/room2-bath.jpg",
+      "Bed Image": "https://example.com/room2-bed.jpg"
+    },
+    {
+      "Room type": "Family Suite",
+      "Title": "Home Away from Home",
+      "Price": 189,
+      "Room Size": "450 sq ft",
+      "Description": "Our Family Suite is ideal for family vacations. It features two separate bedrooms, a fully equipped kitchenette, and a cozy living room. Enjoy quality time with your loved ones while still having your own space.",
+      "Special Offers": ["Kids stay free", "Complimentary parking", "Evening turndown service"],
+      "Stars": 4,
+      "Bath Image": "https://example.com/room3-bath.jpg",
+      "Bed Image": "https://example.com/room3-bed.jpg"
+    },
+    {
+      "Room type": "Executive King Room",
+      "Title": "Business Elegance",
+      "Price": 179,
+      "Room Size": "350 sq ft",
+      "Description": "Our Executive King Room is designed for business travelers seeking a comfortable and productive stay. Enjoy a spacious work desk, high-speed internet, and access to our business center.",
+      "Special Offers": ["Complimentary breakfast", "Late check-out", "Shuttle service"],
+      "Stars": 4,
+      "Bath Image": "https://example.com/room4-bath.jpg",
+      "Bed Image": "https://example.com/room4-bed.jpg"
+    },
+    {
+      "Room type": "Ocean View Suite",
+      "Title": "Seaside Serenity",
+      "Price": 299,
+      "Room Size": "700 sq ft",
+      "Description": "Indulge in breathtaking ocean views from our Ocean View Suite. This elegant suite features a private balcony, a luxurious bathroom with a deep soaking tub, and exclusive access to our rooftop lounge.",
+      "Special Offers": ["Complimentary champagne", "Rooftop lounge access", "In-room spa treatments"],
+      "Stars": 5,
+      "Bath Image": "https://example.com/room5-bath.jpg",
+      "Bed Image": "https://example.com/room5-bed.jpg"
+    },
+    {
+      "Room type": "Budget Single Room",
+      "Title": "Smart Saver",
+      "Price": 89,
+      "Room Size": "200 sq ft",
+      "Description": "Our Budget Single Room is perfect for solo travelers on a budget. It offers all the essentials for a comfortable stay with a compact design.",
+      "Special Offers": ["Free Wi-Fi", "Affordable rates", "Central location"],
+      "Stars": 2,
+      "Bath Image": "https://example.com/room6-bath.jpg",
+      "Bed Image": "https://example.com/room6-bed.jpg"
+    },
+    {
+      "Room type": "Luxury Villa",
+      "Title": "Villa Elegante",
+      "Price": 499,
+      "Room Size": "1200 sq ft",
+      "Description": "Escape to our Luxury Villa for the ultimate in privacy and opulence. This spacious villa features a private pool, a fully equipped kitchen, and a dedicated butler for a truly indulgent experience.",
+      "Special Offers": ["Private pool", "Butler service", "Gourmet dining"],
+      "Stars": 5,
+      "Bath Image": "https://example.com/room7-bath.jpg",
+      "Bed Image": "https://example.com/room7-bed.jpg"
+    },
+    {
+      "Room type": "Junior Suite",
+      "Title": "Chic Comfort",
+      "Price": 199,
+      "Room Size": "400 sq ft",
+      "Description": "Experience stylish comfort in our Junior Suite. This room boasts a separate sitting area, a queen-size bed, and modern amenities for a relaxing stay.",
+      "Special Offers": ["Complimentary breakfast", "Late check-out", "Spa discounts"],
+      "Stars": 3,
+      "Bath Image": "https://example.com/room8-bath.jpg",
+      "Bed Image": "https://example.com/room8-bed.jpg"
+    },
+    {
+      "Room type": "Mountain View Room",
+      "Title": "Scenic Retreat",
+      "Price": 159,
+      "Room Size": "350 sq ft",
+      "Description": "Enjoy the beauty of the mountains from our Mountain View Room. This room features a balcony with stunning mountain vistas, a comfortable queen-size bed, and all the comforts of home.",
+      "Special Offers": ["Mountain view balcony", "Hiking tours", "Local cuisine experience"],
+      "Stars": 4,
+      "Bath Image": "https://example.com/room9-bath.jpg",
+      "Bed Image": "https://example.com/room9-bed.jpg"
+    },
+    {
+      "Room type": "Economy Twin Room",
+      "Title": "Affordable Twins",
+      "Price": 99,
+      "Room Size": "250 sq ft",
+      "Description": "Our Economy Twin Room is a great choice for budget-conscious travelers. It includes two twin beds and essential amenities for a cozy stay.",
+      "Special Offers": ["Affordable rates", "Free shuttle service", "Nearby attractions"],
+      "Stars": 2,
+      "Bath Image": "https://example.com/room10-bath.jpg",
+      "Bed Image": "https://example.com/room10-bed.jpg"
+    }
+  ]
+  

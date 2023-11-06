@@ -15,6 +15,7 @@ const Navbar = () => {
 
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/Rooms">Rooms</NavLink></li>
         <li><NavLink to="/mybookings">My Bookings</NavLink></li>
         <li><NavLink to="/career">Career Opportunities</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
@@ -23,7 +24,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar max-w-6xl mx-auto font-Hind px-1 md:px-3">
+        <div className="navbar max-w-7xl mx-auto font-Hind px-1 md:px-3">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
