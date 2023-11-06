@@ -7,10 +7,12 @@ export const AuthContext = createContext(null)
 const auth = getAuth(app);
 const Authproviders = ({children}) => {
     const [user ,setuser] = useState(null)
+    const [loading , setloading] = useState(true)
     useEffect(()=>{
         const Unsubscribe = onAuthStateChanged(auth , currentUser => {
             console.log('user in auth state changes' , currentUser)
             setuser(currentUser)
+            setloading(false)
         })
 
         return () => {
@@ -20,15 +22,18 @@ const Authproviders = ({children}) => {
 
     // create user
     const createUser = (email , password) => {
+        setloading(true)
         return createUserWithEmailAndPassword(auth , email , password)
     }
     // login user
     const loginUser = (email , password) => {
+        setloading(true)
         return signInWithEmailAndPassword(auth , email , password)
     }
 
     // logout user
     const logout = () => {
+        setloading(true)
         return signOut(auth)
     }
 
@@ -38,7 +43,8 @@ const Authproviders = ({children}) => {
         user,
         createUser,
         loginUser,
-        logout
+        logout,
+        loading
 
     }
 
