@@ -2,14 +2,15 @@
 // import PropTypes from 'prop-types';
 import { FcGoogle } from 'react-icons/fc';
 import loginimg from '../../assets/login.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/Authproviders';
 // react toast
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
-        const { createUser } = useContext(AuthContext)
+        const { createUser , GoogleLogin } = useContext(AuthContext)
+        const navigate = useNavigate()
         const handleRegister = e => {
             e.preventDefault()
             const form = new FormData(e.currentTarget);
@@ -38,6 +39,18 @@ const Register = () => {
                 .catch(error =>toast(error.message))
         }
 
+        const HandleGoogleLogin = () => {
+            GoogleLogin()
+                .then(result => {
+                    console.log(result)
+                    toast("Login Success")
+                    navigate(location?.state ? location.state : '/')
+    
+                })
+                .catch(error => toast(error.message))
+        }
+    
+
         return (
             <div className="flex flex-row-reverse  justify-center w-full h-screen items-center font-Hind px-3">
                 <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3 mt-11" >
@@ -51,7 +64,7 @@ const Register = () => {
                         </form>
                         <div className="text-center ">
                             <p className="text-[#3fb43b] pb-1">or login using google</p>
-                            <button className="btn border-2 border-[#3fb43b] w-full hover:bg-[#3fb43b] hover:text-white"><FcGoogle></FcGoogle> Google</button>
+                            <button onClick={HandleGoogleLogin} className="btn border-2 border-[#3fb43b] w-full hover:bg-[#3fb43b] hover:text-white"><FcGoogle></FcGoogle> Google</button>
                             <p className='pt-2 '>Already have a account? <Link to="/login"> <button className='text-[#3fb43b] underline'>Login Now</button></Link></p>
 
                         </div>
