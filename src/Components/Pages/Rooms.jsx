@@ -2,6 +2,9 @@
 import { useEffect, useState } from 'react';
 import Room from '../Room/Room';
 
+import Navbanner from '../Navbar/Navbanner';
+import Navbar from '../Navbar/Navbar';
+
 const Rooms = ()=> {
     const [rooms , setRooms] = useState([])
     
@@ -14,6 +17,8 @@ const Rooms = ()=> {
     
     return (
         <div className='font-Hind'>
+            <Navbanner></Navbanner>
+            <Navbar></Navbar>
             <div className='flex justify-center mt-6 mb-5'>
                 <h1 className='font-bold text-4xl md:text-5xl'>Our Rooms</h1>
             </div>

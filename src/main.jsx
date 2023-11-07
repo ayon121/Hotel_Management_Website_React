@@ -14,6 +14,7 @@ import Authproviders from './Providers/Authproviders';
 import Register from './Components/Pages/Register';
 import Error from './Components/Pages/Error';
 import Rooms from './Components/Pages/Rooms';
+import RoomDetails from './Components/Pages/RoomDetails';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path : "/Rooms",
         element : <Rooms></Rooms>
+      },
+      {
+        path : "/roomdetails/:id",
+        element : <RoomDetails></RoomDetails>
+
       }
     ]
   },
