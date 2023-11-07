@@ -13,6 +13,7 @@ import Login from './Components/Pages/Login';
 import Authproviders from './Providers/Authproviders';
 import Register from './Components/Pages/Register';
 import Error from './Components/Pages/Error';
+import Rooms from './Components/Pages/Rooms';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path : "/register" ,
         element : <Register></Register>     
+      },
+      {
+        path : "/Rooms",
+        element : <Rooms></Rooms>
       }
     ]
   },
