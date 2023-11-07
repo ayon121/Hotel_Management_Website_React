@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authproviders';
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext)
-
+    const useremail = user?.email
     const handlelogOut = () => {
         logout()
             .then()
@@ -16,7 +16,9 @@ const Navbar = () => {
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/Rooms">Rooms</NavLink></li>
-        <li><NavLink to="/mybookings">My Bookings</NavLink></li>
+       {
+         user && <li><NavLink to={`/mybookings/${useremail}`}>My Bookings</NavLink></li>
+       }
         <li><NavLink to="/career">Career Opportunities</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>

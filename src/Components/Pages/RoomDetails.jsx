@@ -13,7 +13,7 @@ const RoomDetails = () => {
     const {user} = useContext(AuthContext)
     const [currentroom, setRooms] = useState([])
     
-    console.log(user?.email);
+   
 
 
 

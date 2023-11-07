@@ -15,6 +15,8 @@ import Register from './Components/Pages/Register';
 import Error from './Components/Pages/Error';
 import Rooms from './Components/Pages/Rooms';
 import RoomDetails from './Components/Pages/RoomDetails';
+import Mybookings from './Components/Pages/Mybookings';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,11 @@ const router = createBrowserRouter([
       {
         path : "/roomdetails/:id",
         element : <RoomDetails></RoomDetails>
+
+      },
+      {
+        path : "/mybookings/:id",
+        element: <PrivateRoute><Mybookings></Mybookings></PrivateRoute>
 
       }
     ]
