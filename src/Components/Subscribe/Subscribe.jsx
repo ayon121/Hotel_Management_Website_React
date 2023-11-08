@@ -1,5 +1,5 @@
 
-import PropTypes from 'prop-types';
+
 
 const Subscribe = () => {
     return (
