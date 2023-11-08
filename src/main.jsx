@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path : "/roomdetails/:id",
-        element : <RoomDetails></RoomDetails>
+        element : <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>
 
       },
       {
