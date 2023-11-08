@@ -18,6 +18,7 @@ import RoomDetails from './Components/Pages/RoomDetails';
 import Mybookings from './Components/Pages/Mybookings';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import About from './Components/Pages/About';
+import Contact from './Components/Pages/Contact';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path : "/about",
         element : <About></About>
+      },
+      {
+        path : "/contact" ,
+        element : <Contact></Contact>
       }
     ]
   },

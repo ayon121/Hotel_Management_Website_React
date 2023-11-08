@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Navbanner from '../Navbar/Navbanner';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
@@ -21,7 +21,7 @@ const About = () => {
                 </div>
                 <div>
                     <h1 className='mt-2 text-2xl font-bold'>The RoomVue Experience</h1>
-                    <p className='text-lg font-semibold pb-3 pt-2'>At RoomVue, we believe that a truly exceptional hotel experience extends beyond the confines of your room. Our dedicated staff is here to make your stay remarkable, ensuring that you feel at home from the moment you arrive. Whether you're traveling for business or leisure, our hotel offers a range of amenities and services designed to cater to your every need.</p>
+                    <p className='text-lg font-semibold pb-3 pt-2'>At RoomVue, we believe that a truly exceptional hotel experience extends beyond the confines of your room. Our dedicated staff is here to make your stay remarkable, ensuring that you feel at home from the moment you arrive. Whether you are traveling for business or leisure, our hotel offers a range of amenities and services designed to cater to your every need.</p>
                 </div>
                 <div>
                     <h1 className='mt-2 text-2xl font-bold'>Our Commitment to Sustainability</h1>
