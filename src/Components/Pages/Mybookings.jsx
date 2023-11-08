@@ -18,22 +18,22 @@ const Mybookings = () => {
             .then(data => setMybookings(data))
     }, [id])
 
-    // const handledelete = _id => {
-    //     console.log('delete' , _id);
-    //     fetch(`http://localhost:5000/mybookings/${ _id}` , {
-    //         method: 'DELETE'
+    const handledelete = _id => {
+        console.log('delete' , _id);
+        fetch(`http://localhost:5000/mybookings/${ _id}` , {
+            method: 'DELETE'
 
-    //     })
-    //     .then(res => res.json())
-    //     .then(data =>{
-    //         console.log(data);
-    //         if(data.deletedCount > 0){
-    //             alert('deleted ')
-    //             // const remaining = mybookings.filter(book => book._id !== _id)
-    //             // setMybookings(remaining)
-    //         }
-    //     } )
-    // }
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.deletedCount > 0){
+                alert('deleted ')
+                // const remaining = mybookings.filter(book => book._id !== _id)
+                // setMybookings(remaining)
+            }
+        } )
+    }
     return (
         <div className='max-w-6xl px-3 mx-auto mt-5 font-Hind'>
             <div className='flex justify-center mt-4 mb-4'>

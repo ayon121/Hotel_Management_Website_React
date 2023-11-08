@@ -19,6 +19,7 @@ import Mybookings from './Components/Pages/Mybookings';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
+import Review from './Components/Review/Review';
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
       {
         path : "/contact" ,
         element : <Contact></Contact>
+      },
+      {
+        path : "/givereviews/:id",
+        element : <PrivateRoute><Review></Review></PrivateRoute>
+        
       }
     ]
   },
