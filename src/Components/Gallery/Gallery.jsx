@@ -10,11 +10,11 @@ import img7 from "../../assets/gelary7.jpg"
 
 const Gallery = () => {
     return (
-        <div>
+        <div className="mb-7 ">
             <div className='flex justify-center font-Hind font-bold'>
                 <h1 className=' text-3xl md:text-4xl lg:text-5xl mb-5 mt-3'>Our Gallery</h1>
             </div>
-            <div className='max-w-7xl px-3 h-screen mx-auto mb-5 mt-2'>
+            <div className='max-w-7xl px-3 mx-auto mb-5 mt-2'>
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-3 mb-5' >
                     <div className=' md:col-span-2'>
                         <img className='h-52 w-full rounded-2xl ' src={img1} alt="" />

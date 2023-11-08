@@ -2,9 +2,10 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Mybooking = ({mybooking}) => {
+const Mybooking = ({mybooking , handledelete}) => {
     const { _id, title, price, room_type, bed_img , available_date} = mybooking
-    console.log(mybooking);
+    
+
     return (
         <div className="card card-compact w-auto h-96 bg-base-100 shadow-xl">
             <figure><img src={bed_img} alt="cover image" /></figure>
@@ -17,7 +18,7 @@ const Mybooking = ({mybooking}) => {
 
                 </div>
                 <div className="card-actions justify-end">
-                   <button className="btn btn-outline btn-success">Cancel</button>
+                   <button onClick={()=> handledelete(_id)} className="btn btn-outline btn-success">Cancel</button>
                 </div>
             </div>
         </div>
@@ -25,7 +26,8 @@ const Mybooking = ({mybooking}) => {
 };
 
 Mybooking.propTypes = {
-    mybooking : PropTypes.object
+    mybooking : PropTypes.object, 
+    handledelete : PropTypes.func
 };
 
 export default Mybooking;

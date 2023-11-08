@@ -40,7 +40,7 @@ const RoomDetails = () => {
         .then(res => res.json())
         .then(data => {
             if(data.insertedId){
-                toast("Product Added Successfully")
+                toast("Room Booked Successfully")
             
             }
         })
