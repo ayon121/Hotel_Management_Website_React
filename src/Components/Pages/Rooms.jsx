@@ -4,6 +4,7 @@ import Room from '../Room/Room';
 
 import Navbanner from '../Navbar/Navbanner';
 import Navbar from '../Navbar/Navbar';
+import { Helmet } from 'react-helmet';
 
 const Rooms = ()=> {
     const [rooms , setRooms] = useState([])
@@ -17,6 +18,9 @@ const Rooms = ()=> {
     
     return (
         <div className='font-Hind'>
+            <Helmet>
+            <title>RoomVue | Rooms</title>
+        </Helmet>
             <Navbanner></Navbanner>
             <Navbar></Navbar>
             <div className='flex justify-center mt-6 mb-5'>

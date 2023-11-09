@@ -3,6 +3,8 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import app from '../firebase/firebase.config';
 
 import PropTypes from 'prop-types';
+import axios from "axios";
+
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
 const Authproviders = ({children}) => {
@@ -11,14 +13,38 @@ const Authproviders = ({children}) => {
     useEffect(()=>{
         const Unsubscribe = onAuthStateChanged(auth , currentUser => {
             console.log('user in auth state changes' , currentUser)
+            const loggedEmail = currentUser?.email || user?.email
+            const loggedUser = {email : loggedEmail}
             setuser(currentUser)
             setloading(false)
-        })
+            if(currentUser){
+                
+                axios.post('http://localhost:5000/jwt' ,loggedUser , {withCredentials : true})
+                .then(res => {
+                    console.log(res.data);
+                })
+            }
+            else{
+                axios.post('http://localhost:5000/logout' ,loggedUser , {withCredentials : true})
+                .then(res => {
+                    console.log(res.data);
+                })
+
+            }
+            
+              
+
+
+    })
+
+
 
         return () => {
             Unsubscribe()
         }
-    },[])
+     },[])
+
+
 
     // create user
     const createUser = (email , password) => {
@@ -62,6 +88,8 @@ const Authproviders = ({children}) => {
 
     );
 };
+
+
 
 Authproviders.propTypes = {
     children : PropTypes.node

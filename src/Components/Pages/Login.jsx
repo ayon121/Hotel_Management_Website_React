@@ -10,6 +10,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../Navbar/Navbar';
 
+import { Helmet } from 'react-helmet';
+
 const Login = () => {
     const { loginUser , GoogleLogin  } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -19,11 +21,33 @@ const Login = () => {
         const email = form.get('email')
         const password = form.get('password')
         loginUser(email, password)
-            .then(
+            .then(result => {
+                const loggedInUser = result.user 
+                console.log(loggedInUser);
                 toast("Login Success")
+               
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
+                // get access token
+                // axios.post('http://localhost:5000/jwt' , user ,  {withCredentials : true})
+                // .then( res => {
+                //     console.log(res.data);
+                //     if(res.data.success) {
+                //         navigate(location?.state ? location.state : '/')
+                //     }
 
-            )
-            .catch(error => toast(error.message))
+                // })
+
+           
+
+
+    })
+            .catch(error => {
+                
+                toast(error.message)
+                
+
+            })
 
     }
 
@@ -40,6 +64,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>RoomVue | Login</title>
+        </Helmet>
             <Navbar></Navbar>
             <div className="flex  justify-center w-full h-screen items-center font-Hind px-3">
                 <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3 mt-11" >

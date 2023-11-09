@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Navbanner from "../Navbar/Navbanner";
 import Navbar from "../Navbar/Navbar";
 
@@ -5,6 +6,9 @@ import Navbar from "../Navbar/Navbar";
 const Error = () => {
     return (
         <div className=" h-screen">
+            <Helmet>
+            <title>RoomVue | Error</title>
+        </Helmet>
             <Navbanner></Navbanner>
             <Navbar></Navbar>
             <div className='flex justify-center items-center  mt-24 text-center'>

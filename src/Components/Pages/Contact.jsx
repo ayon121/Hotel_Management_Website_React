@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "../Navbar/Navbar";
 import loginimg from '../../assets/login.jpg'
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
 
@@ -12,6 +13,9 @@ const Contact = () => {
     }
     return (
         <div>
+        <Helmet>
+            <title>RoomVue | Contact</title>
+        </Helmet>
         <Navbar></Navbar>
         <div className="flex  justify-center w-full h-screen items-center font-Hind px-3">
             <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3 mt-11" >

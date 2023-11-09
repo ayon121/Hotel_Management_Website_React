@@ -2,10 +2,14 @@
 import Navbanner from '../Navbar/Navbanner';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
     return (
         <div>
+            <Helmet>
+                <title>RoomVue | About</title>
+            </Helmet>
             <Navbanner></Navbanner>
             <Navbar></Navbar>
             <div className='flex justify-center  font-bold font-Hind'>

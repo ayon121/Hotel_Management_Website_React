@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import Footer from "../Footer/Footer";
 import Gallery from "../Gallery/Gallery";
@@ -10,6 +11,9 @@ import Subscribe from "../Subscribe/Subscribe";
 const Home = () => {
     return (
         <div>
+            <Helmet>
+            <title>RoomVue | Home</title>
+        </Helmet>
             <Navbanner></Navbanner>
             <Navbar></Navbar>
             <Banner></Banner>

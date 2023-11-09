@@ -8,6 +8,7 @@ import { AuthContext } from '../../Providers/Authproviders';
 // react toast
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 const Register = () => {
         const { createUser , GoogleLogin } = useContext(AuthContext)
         const navigate = useNavigate()
@@ -53,6 +54,9 @@ const Register = () => {
 
         return (
             <div className="flex flex-row-reverse  justify-center w-full h-screen items-center font-Hind px-3">
+                <Helmet>
+            <title>RoomVue | Register</title>
+        </Helmet>
                 <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3 mt-11" >
                     {/* login form */}
                     <div className="flex flex-col  py-1 px-8  border-l-4 border-[#3fb43b] h-full">

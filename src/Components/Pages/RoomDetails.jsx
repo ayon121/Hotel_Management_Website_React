@@ -9,16 +9,22 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import OnPageReview from '../Review/OnPageReview';
 import Footer from '../Footer/Footer';
+import { Helmet } from 'react-helmet';
+// import axios from 'axios';
+// import axios from 'axios';
+// import useAxiossecure from '../../hooks/useAxiossecure';
 
 const RoomDetails = () => {
     const { id } = useParams()
     const { user } = useContext(AuthContext)
     const [currentroom, setRooms] = useState([])
     const [review, setReview] = useState([])
+    // const url = `http://localhost:5000/rooms/${id}`
 
 
 
-
+    // const axiosSecure = useAxiossecure()
+    // const url = `/rooms/${id}`
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews/${id}`)
@@ -26,8 +32,14 @@ const RoomDetails = () => {
             .then(data => setReview(data))
     }, [id])
 
-
     useEffect(() => {
+        
+        // axios.get(url ,  {withCredentials : true})
+        // .then(res => {
+        //     setRooms(res.data)
+        // })
+
+
         fetch(`http://localhost:5000/rooms/${id}`)
             .then(res => res.json())
             .then(data => setRooms(data))
@@ -50,7 +62,7 @@ const RoomDetails = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    toast("Room Booked Successfully")
+                    toast("Review Added Successfully")
 
                 }
             })
@@ -59,6 +71,9 @@ const RoomDetails = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>RoomVue | RoomDetails</title>
+        </Helmet>
             <Navbanner></Navbanner>
             <Navbar></Navbar>
             <div className='max-w-6xl px-3 mx-auto mt-5 font-Hind'>
@@ -96,7 +111,7 @@ const RoomDetails = () => {
                     </div>
 
                     <div className='flex justify-center mt-4 mb-4'>
-                        <h1 className='text-4xl md:text-5xl font-bold'>Reviews {review.length}</h1>
+                        <h1 className='text-4xl md:text-5xl font-bold'>Reviews {review?.length}</h1>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-3 px-3 mb-6'>
                         {
