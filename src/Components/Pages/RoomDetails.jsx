@@ -33,7 +33,7 @@ const RoomDetails = () => {
     }, [id])
 
     useEffect(() => {
-        
+
         // axios.get(url ,  {withCredentials : true})
         // .then(res => {
         //     setRooms(res.data)
@@ -47,7 +47,8 @@ const RoomDetails = () => {
 
     const { room_type, price, offers, bed_img, bath_img, available_rooms, available_date, room_size } = currentroom
     const useremail = user?.email
-    const Mybookings = { ...currentroom, useremail }
+
+    
 
     const addtoMybookings = (bookings) => {
         fetch('http://localhost:5000/mybookings',
@@ -62,18 +63,32 @@ const RoomDetails = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    toast("Review Added Successfully")
+                    toast("Book Successfully")
 
                 }
             })
     }
 
+    const handlebook = e => {
+        e.preventDefault()
+        
+        const form = e.target
+        const bookdate = form.bookdate.value;
+        if(bookdate !== available_date){
+            toast('That is not available')
+            console.log(bookdate);
+            console.log(available_date);
+            return
+        }
+        const Mybookings = { ...currentroom, useremail , bookdate}
+        addtoMybookings(Mybookings)
+    }
 
     return (
         <div>
             <Helmet>
-            <title>RoomVue | RoomDetails</title>
-        </Helmet>
+                <title>RoomVue | RoomDetails</title>
+            </Helmet>
             <Navbanner></Navbanner>
             <Navbar></Navbar>
             <div className='max-w-6xl px-3 mx-auto mt-5 font-Hind'>
@@ -106,8 +121,17 @@ const RoomDetails = () => {
                         <h1 className='text-xl md:text-2xl lg:text-3xl font-bold'><span className='text-[#3fb43b]'>Offers :</span> {offers?.join(',')}</h1>
 
                     </div>
-                    <div className='flex justify-center mt-4 mb-4'>
-                        <button onClick={() => addtoMybookings(Mybookings)} className='btn btn-outline btn-success'>Book Now</button>
+                    <div className='flex items-center justify-center mt-4 mb-4'>
+                        <div>
+                            <form className='text-center' onSubmit={handlebook} >
+                                <div className='flex gap-3 items-center justify-center mb-3'>
+                                    <h1 className='text-2xl'>Your Booking Date :</h1>
+                                    <input type="date" name="bookdate"  required />
+                                </div>
+                                <input  className='btn btn-outline btn-success' type="submit" value="Book Now" />
+                               
+                            </form>
+                        </div>
                     </div>
 
                     <div className='flex justify-center mt-4 mb-4'>

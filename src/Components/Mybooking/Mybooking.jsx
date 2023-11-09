@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Mybooking = ({ mybooking, handledelete }) => {
-    const { _id, title, price, room_type, bed_img, available_date } = mybooking
+    const { _id, title, price, room_type, bed_img, bookdate } = mybooking
 
    
 
@@ -16,7 +16,7 @@ const Mybooking = ({ mybooking, handledelete }) => {
                 <p>{room_type}</p>
                 <div>
                     <h1 className='text-lg font-bold'>Price: $ {price}</h1>
-                    <h1 className='text-lg font-bold'>Booked On: {available_date}</h1>
+                    <h1 className='text-lg font-bold'>Booked On: {bookdate}</h1>
 
                 </div>
                 <div className="card-actions justify-end">
