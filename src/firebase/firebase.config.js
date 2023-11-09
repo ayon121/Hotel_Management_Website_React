@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_APIKEY);
 const firebaseConfig = {
-  apiKey: "AIzaSyC4gyFbCppBAQBLLDfeelrW7W841I2TOtE",
-  authDomain: "hotel-management-beb7b.firebaseapp.com",
-  projectId: "hotel-management-beb7b",
-  storageBucket: "hotel-management-beb7b.appspot.com",
-  messagingSenderId: "541262475103",
-  appId: "1:541262475103:web:abf16dc444b58f57e290ea"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
