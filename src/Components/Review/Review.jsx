@@ -14,7 +14,8 @@ const Review = () => {
         const form = e.target
         const name = form.name.value;
         const sms = form.message.value;
-        const review = { name, sms  , id }
+        const ratings = form.number.value;
+        const review = { name, sms  , id  , ratings}
 
         fetch('http://localhost:5000/reviews',
             {
@@ -28,7 +29,7 @@ const Review = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    toast("Room Booked Successfully")
+                    toast("Review added Successfully")
 
                 }
             })
@@ -44,6 +45,7 @@ const Review = () => {
                     <form className='flex flex-col' onSubmit={handleReview}>
                         <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-[#3fb43b]">Give Review </h1>
                         <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="name" name="name" placeholder="name" />
+                        <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="text" name="number" placeholder="give 1 to 5 review" />
                         <input className="py-3 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="text" name="message" placeholder="message" />
                         <input className="btn border-2 border-[#3fb43b] hover:bg-[#3fb43b] hover:text-white" type="submit" value="Give Review" />
 

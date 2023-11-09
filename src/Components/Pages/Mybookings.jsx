@@ -40,16 +40,12 @@ const Mybookings = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-            //   Swal.fire({
-            //     title: "Deleted!",
-            //     text: "Your file has been deleted.",
-            //     icon: "success"
-            //   });
-            fetch(`http://localhost:5000/mybooking/${_id}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+            
             }  
           });
     }
