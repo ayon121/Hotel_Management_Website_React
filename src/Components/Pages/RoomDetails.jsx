@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import OnPageReview from '../Review/OnPageReview';
 import Footer from '../Footer/Footer';
 import { Helmet } from 'react-helmet';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import axios from 'axios';
 // import axios from 'axios';
 // import axios from 'axios';
 // import useAxiossecure from '../../hooks/useAxiossecure';
@@ -19,68 +21,98 @@ const RoomDetails = () => {
     const { user } = useContext(AuthContext)
     const [currentroom, setRooms] = useState([])
     const [review, setReview] = useState([])
-    // const url = `http://localhost:5000/rooms/${id}`
+    const axiosSecure = useAxiosSecure()
 
 
-
-    // const axiosSecure = useAxiossecure()
-    // const url = `/rooms/${id}`
-
+    ///////using normal axios Secure////////
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${id}`)
-            .then(res => res.json())
-            .then(data => setReview(data))
-    }, [id])
+        axiosSecure.get(`/reviews/${id}`)
+        .then(res => setReview(res.data))
+    }, [id , axiosSecure])
+    
+    
 
+
+
+    ///////using normal fetch////////
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/reviews/${id}`)
+    //         .then(res => res.json())
+    //         .then(data => setReview(data))
+    // }, [id])
+
+
+    ///////using normal axios Secure////////
     useEffect(() => {
-
-        // axios.get(url ,  {withCredentials : true})
-        // .then(res => {
-        //     setRooms(res.data)
-        // })
+        axiosSecure.get(`/rooms/${id}`)
+            .then(res => setRooms(res.data))
+    }, [axiosSecure , id])
 
 
-        fetch(`http://localhost:5000/rooms/${id}`)
-            .then(res => res.json())
-            .then(data => setRooms(data))
-    }, [id])
+    ///////using normal fetch////////
+    // useEffect(() => {  
+    //     fetch(`http://localhost:5000/rooms/${id}`)
+    //         .then(res => res.json())
+    //         .then(data => setRooms(data))
+    // }, [id])
 
-    const { room_type, price, offers, bed_img, bath_img, available_rooms, available_date, room_size } = currentroom
+    const { room_type, price, offers, bed_img, bath_img, available_rooms, available_date, room_size , _id ,title } = currentroom
     const useremail = user?.email
+
+    const bookitem = {
+        roomid : _id,
+        useremail : user?.email,
+        room_type,
+        bed_img,
+        price,
+        title
+
+    }
 
     
 
     const addtoMybookings = (bookings) => {
-        fetch('http://localhost:5000/mybookings',
-            {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(bookings)
-            }
-        )
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
+       
+
+        axiosSecure.post('/mybookings' , bookings)
+        .then(res => {
+            if (res.data.insertedId) {
                     toast("Book Successfully")
 
                 }
-            })
+
+        })
+
+        // fetch('http://localhost:5000/mybookings',
+        //     {
+        //         method: 'POST',
+        //         headers: {
+        //             'content-type': 'application/json'
+        //         },
+        //         body: JSON.stringify(bookings)
+        //     }
+        // )
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         if (data.insertedId) {
+        //             toast("Book Successfully")
+
+        //         }
+        //     })
     }
 
     const handlebook = e => {
         e.preventDefault()
-        
+
         const form = e.target
         const bookdate = form.bookdate.value;
-        if(bookdate !== available_date){
+        if (bookdate !== available_date) {
             toast('That is not available')
             console.log(bookdate);
             console.log(available_date);
             return
         }
-        const Mybookings = { ...currentroom, useremail , bookdate}
+        const Mybookings = { ...bookitem, bookdate }
         addtoMybookings(Mybookings)
     }
 
@@ -126,10 +158,10 @@ const RoomDetails = () => {
                             <form className='text-center' onSubmit={handlebook} >
                                 <div className='flex gap-3 items-center justify-center mb-3'>
                                     <h1 className='text-2xl'>Your Booking Date :</h1>
-                                    <input type="date" name="bookdate"  required />
+                                    <input type="date" name="bookdate" required />
                                 </div>
-                                <input  className='btn btn-outline btn-success' type="submit" value="Book Now" />
-                               
+                                <input className='btn btn-outline btn-success' type="submit" value="Book Now" />
+
                             </form>
                         </div>
                     </div>

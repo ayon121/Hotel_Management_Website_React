@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 const Room = ({ room }) => {
     const { _id,title, price, room_type, available_rooms, bed_img } = room
-    console.log(_id)
+    
     return (
         <div className="card card-compact w-auto h-96 bg-base-100 shadow-xl">
-            <figure><img src={bed_img} alt="cover image" /></figure>
+            <figure>
+                <img src={bed_img} alt="cover image" />
+                </figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>{room_type}</p>

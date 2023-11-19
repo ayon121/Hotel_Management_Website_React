@@ -6,21 +6,38 @@ import Navbanner from '../Navbar/Navbanner';
 import Navbar from '../Navbar/Navbar';
 import { Helmet } from 'react-helmet';
 
-const Rooms = ()=> {
-    const [rooms , setRooms] = useState([])
-    
-    useEffect( () => {
-        fetch('http://localhost:5000/rooms')
-        .then(res => res.json())
-        .then(data => setRooms(data))
-    },[])
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
+//http://localhost:5000
+const Rooms = () => {
+    const [rooms, setRooms] = useState([])
+    const axiosSecure = useAxiosSecure()
 
-    
+
+
+    // ///////using normal axios////////
+    // axios.get('http://localhost:5000/rooms')
+    // .then(res => setRooms(res.data))
+
+
+    useEffect(() => {
+        axiosSecure.get('/rooms')
+            .then(res => setRooms(res.data))
+    }, [axiosSecure])
+
+
+    ///////using normal fetch////////
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/rooms')
+    //     .then(res => res.json())
+    //     .then(data => setRooms(data))
+    // },[])
+
+
     return (
         <div className='font-Hind'>
             <Helmet>
-            <title>RoomVue | Rooms</title>
-        </Helmet>
+                <title>RoomVue | Rooms</title>
+            </Helmet>
             <Navbanner></Navbanner>
             <Navbar></Navbar>
             <div className='flex justify-center mt-6 mb-5'>
@@ -36,7 +53,7 @@ const Rooms = ()=> {
 };
 
 Rooms.propTypes = {
-    
+
 };
 
 export default Rooms;
