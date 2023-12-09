@@ -55,6 +55,7 @@ const Mybooking = ({ mybooking, handledelete }) => {
                 </div>
                 <div className="card-actions justify-end">
                     <Link to={`/givereviews/${_id}`}><button className="btn btn-outline btn-success">Give Review</button></Link>
+                    
                     {/* <h3 className="font-bold text-lg text-red-600 mb-2">(Remember)You Can not Cancel Before One Day</h3> */}
                     {
 

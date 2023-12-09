@@ -1,29 +1,35 @@
 
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Mybooking from '../Mybooking/Mybooking';
 import { Helmet } from 'react-helmet';
 
 import Navbar from '../Navbar/Navbar';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
+
 
 
 const Mybookings = () => {
     const { id } = useParams()
+    const axiosSecure = useAxiosSecure()
 
+    
     const [mybookings, setMybookings] = useState([])
-    // const url = ` https://cors-anywhere.herokuapp.com/http://localhost:5000/mybookings/${id}`
+    // const url = ` https://cors-anywhere.herokuapp.com/http://localhost:5000/mybookings/${id}` console.log('vjnnbbj[bnbnbbnbnbjnbjbn');
 
-
+     
     useEffect(() => {
-
-
         // axios.get(url)
         //     .then(res => {
         //         setMybookings(res.data)
         //     })
-
+        // axiosSecure.get(`/mybookings/${id}`)
+        // .then(res => {
+        //     setMybookings(res.data)
+        // })
+        
         fetch(`http://localhost:5000/mybookings/${id}`)
             .then(res => res.json())
             .then(data => setMybookings(data))
@@ -65,6 +71,9 @@ const Mybookings = () => {
                         mybookings?.map(mybooking => <Mybooking key={mybooking._id} mybooking={mybooking} handledelete={handledelete}></Mybooking>)
                     }
 
+                </div>
+                <div>
+                <Link to={`/payment`}><button className="btn btn-outline btn-success">Pay Now</button></Link>
                 </div>
 
             </div>

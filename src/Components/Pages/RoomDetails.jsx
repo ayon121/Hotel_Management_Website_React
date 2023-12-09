@@ -11,10 +11,7 @@ import OnPageReview from '../Review/OnPageReview';
 import Footer from '../Footer/Footer';
 import { Helmet } from 'react-helmet';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
-import axios from 'axios';
-// import axios from 'axios';
-// import axios from 'axios';
-// import useAxiossecure from '../../hooks/useAxiossecure';
+import useBookings from '../../Hooks/useBookings';
 
 const RoomDetails = () => {
     const { id } = useParams()
@@ -22,6 +19,7 @@ const RoomDetails = () => {
     const [currentroom, setRooms] = useState([])
     const [review, setReview] = useState([])
     const axiosSecure = useAxiosSecure()
+    const [, refetch] = useBookings()
 
 
     ///////using normal axios Secure////////
@@ -29,11 +27,6 @@ const RoomDetails = () => {
         axiosSecure.get(`/reviews/${id}`)
         .then(res => setReview(res.data))
     }, [id , axiosSecure])
-    
-    
-
-
-
     ///////using normal fetch////////
     // useEffect(() => {
     //     fetch(`http://localhost:5000/reviews/${id}`)
@@ -42,13 +35,18 @@ const RoomDetails = () => {
     // }, [id])
 
 
+
+
     ///////using normal axios Secure////////
     useEffect(() => {
-        axiosSecure.get(`/rooms/${id}`)
+        axiosSecure.get(`/rooms/${id}` ,  {
+            headers : {
+                
+                Authorization : `bearer ${localStorage.getItem('token')}`
+            }
+        })
             .then(res => setRooms(res.data))
     }, [axiosSecure , id])
-
-
     ///////using normal fetch////////
     // useEffect(() => {  
     //     fetch(`http://localhost:5000/rooms/${id}`)
@@ -56,9 +54,11 @@ const RoomDetails = () => {
     //         .then(data => setRooms(data))
     // }, [id])
 
-    const { room_type, price, offers, bed_img, bath_img, available_rooms, available_date, room_size , _id ,title } = currentroom
-    const useremail = user?.email
 
+
+    const { room_type, price, offers, bed_img, bath_img, available_rooms, available_date, room_size , _id ,title } = currentroom
+
+    //sending to cart
     const bookitem = {
         roomid : _id,
         useremail : user?.email,
@@ -78,6 +78,8 @@ const RoomDetails = () => {
         .then(res => {
             if (res.data.insertedId) {
                     toast("Book Successfully")
+                    refetch()
+                    
 
                 }
 

@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { FaHotel } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authproviders';
+import useBookings from '../../Hooks/useBookings';
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext)
     const useremail = user?.email
@@ -12,12 +13,13 @@ const Navbar = () => {
             .then()
             .catch()
     }
-
+    
+    const [bookings] = useBookings()
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/Rooms">Rooms</NavLink></li>
        {
-         user && <li><NavLink to={`/mybookings/${useremail}`}>My Bookings</NavLink></li>
+         user && <li><NavLink to={`/mybookings/${useremail}`}>Bookings ({bookings.length})</NavLink></li>
        }
         
         <li><NavLink to="/about">About Us</NavLink></li>

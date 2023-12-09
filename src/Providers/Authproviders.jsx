@@ -3,6 +3,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import app from '../firebase/firebase.config';
 
 import PropTypes from 'prop-types';
+import { axiosSecure } from "../Hooks/useAxiosSecure";
 
 
 export const AuthContext = createContext(null)
@@ -14,6 +15,23 @@ const Authproviders = ({children}) => {
         const Unsubscribe = onAuthStateChanged(auth , currentUser => {
             console.log('user in auth state changes' , currentUser)
             setuser(currentUser)
+            //jwt setup start
+            if(currentUser){
+                //get token
+                const userinfo = {email : currentUser.email}
+                axiosSecure.post('/jwt' , userinfo )
+                .then(res => {
+                    if(res.data.token){
+                        localStorage.setItem('token' , res.data.token)
+                    }
+                })
+
+            }
+            else {
+                ///no user
+                localStorage.removeItem('token')
+            }
+            //jwt setup ends
             setloading(false)
            
               

@@ -21,50 +21,64 @@ import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
 import Review from './Components/Review/Review';
 
+import {
+  QueryClient,
+  QueryClientProvider,
+  
+} from '@tanstack/react-query'
+import Payment from './Components/Payment/Payment';
+
+const queryClient = new QueryClient()
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement : <Error></Error>,
-    children : [
+    errorElement: <Error></Error>,
+    children: [
       {
-        path : "/",
-        element : <Home></Home>
+        path: "/",
+        element: <Home></Home>
       },
       {
-        path : "/login",
-        element : <Login></Login>
+        path: "/login",
+        element: <Login></Login>
       },
       {
-        path : "/register" ,
-        element : <Register></Register>     
+        path: "/register",
+        element: <Register></Register>
       },
       {
-        path : "/Rooms",
-        element : <Rooms></Rooms>
+        path: "/Rooms",
+        element: <Rooms></Rooms>
       },
       {
-        path : "/roomdetails/:id",
-        element : <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>
+        path: "/roomdetails/:id",
+        element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>
 
       },
       {
-        path : "/mybookings/:id",
+        path: "/mybookings/:id",
         element: <PrivateRoute><Mybookings></Mybookings></PrivateRoute>
 
       },
       {
-        path : "/about",
-        element : <About></About>
+        path: "/about",
+        element: <About></About>
       },
       {
-        path : "/contact" ,
-        element : <Contact></Contact>
+        path: "/contact",
+        element: <Contact></Contact>
       },
       {
-        path : "/givereviews/:id",
-        element : <PrivateRoute><Review></Review></PrivateRoute>
-        
+        path: "/givereviews/:id",
+        element: <PrivateRoute><Review></Review></PrivateRoute>
+
+      },
+      {
+        path : "/payment",
+        element : <Payment></Payment>
+
       }
     ]
   },
@@ -74,8 +88,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Authproviders>
-    <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+
     </Authproviders>
-    
+
   </React.StrictMode>,
 )

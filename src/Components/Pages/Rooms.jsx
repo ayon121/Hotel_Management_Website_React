@@ -18,7 +18,6 @@ const Rooms = () => {
     // axios.get('http://localhost:5000/rooms')
     // .then(res => setRooms(res.data))
 
-
     useEffect(() => {
         axiosSecure.get('/rooms')
             .then(res => setRooms(res.data))
