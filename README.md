@@ -9,18 +9,18 @@
     Features
 </h1>
 <p>
-    1. Responsive
-    2. Login with Email & Password
-    3. Social Login(Google)
-    4. Database(mongodb)
-    5. User Friendly
+    1. Responsive <br>
+    2. Login with Email & Password <br>
+    3. Social Login(Google) <br>
+    4. Database(mongodb) <br>
+    5. User Friendly <br>
 </p>
 <hr>
 <h1>
     Live Link
 </h1>
 <p>
-    Visit Now : <a href="https://hotel-management-beb7b.web.app">Hotel Vue</a>
+    Visit Now : <a href="https://hotel-management-beb7b.web.app">Hotel Vue</a><br>
     Server Repo : <a href="https://github.com/ayon121/Hotel_Management_Server_Node.git">Server Code</a>
 </p>
 <hr>
