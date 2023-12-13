@@ -7,12 +7,17 @@ import img4 from "../../assets/gelary4.jpg"
 import img5 from "../../assets/gelary5.jpg"
 import img6 from "../../assets/gelary6.jpg"
 import img7 from "../../assets/gelary7.jpg"
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const Gallery = () => {
+    const [text] = useTypewriter({
+        words: ['Our Gallery'],
+        loop : 7
+      })
     return (
         <div className="mb-7 ">
             <div className='flex justify-center font-Hind font-bold'>
-                <h1 className=' text-3xl md:text-4xl lg:text-5xl mb-5 mt-3'>Our Gallery</h1>
+                <h1 className=' text-3xl md:text-4xl lg:text-5xl mb-5 mt-3'>{text}<Cursor cursorColor='white' /></h1>
             </div>
             <div className='max-w-7xl px-3 mx-auto mb-5 mt-2'>
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-3 mb-5' >

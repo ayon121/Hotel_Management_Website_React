@@ -14,6 +14,7 @@
     3. Social Login(Google) <br>
     4. Database(mongodb) <br>
     5. User Friendly <br>
+    6. Typing Effect on title in Home Page(Unique Feature)
 </p>
 <hr>
 <h1>

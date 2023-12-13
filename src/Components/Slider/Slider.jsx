@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 
-
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 const Slider = () => {
+    const [text] = useTypewriter({
+        words: ['Escape To Luxury And Comfort'],
+        loop : 7
+      })
     return (
         <div>
             <div className="text-center">
-            <h1 className="font-Hind font-bold  text-3xl md:text-4xl lg:text-5xl mb-3 mt-3">Escape To Luxury And Comfort</h1>
+            <h1 className="font-Hind font-bold  text-3xl md:text-4xl lg:text-5xl mb-3 mt-3">{text}<Cursor cursorColor='white' /></h1>
             </div>
             <div className="carousel rounded-box mt-6">
                 <div className="carousel-item">
