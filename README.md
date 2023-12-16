@@ -9,28 +9,29 @@
     Features
 </h1>
 <p>
-    Responsive Design Excellence:
-    Crafted an intuitively responsive interface, ensuring a flawless user experience across diverse devices, from desktops to smartphones.
-    Secure and Streamlined Login:
-    Implemented a robust email and password login system, fortified by the convenience of Google social login, prioritizing user privacy 
-    and ease of access.
-    Dynamic Database Integration:
-    Leveraged MongoDB to establish a dynamic and scalable database foundation, optimizing data management for streamlined hotel         
-    operations.
-    User-Centric Interface:
-    Engineered a user-friendly design, harmonizing functionality and aesthetics to create a welcoming and efficient online space for 
-    hotel management.
-    Captivating Typing Effect:
-    Pioneered a unique typing effect on the homepage title, adding a touch of sophistication and uniqueness to the website's first 
-    impression.
-    Innovative Reputation Chart:
-    Introduced a distinctive reputation chart on the About page, providing users with a visual representation of the hotel's standing and 
-    enhancing transparency.
-    Empowering User Reviews:
-    Implemented a feature enabling users to post reviews after booking, fostering an engaged community and authentic feedback loop.
-    Stunning Visual Gallery:
-    Curated a beautiful and immersive gallery, showcasing the hotel's ambiance and amenities to captivate potential guests and elevate 
-    the online presence.
+   Responsive Design Excellence:
+Crafted an intuitively responsive interface, ensuring a flawless user experience across diverse devices, from desktops to smartphones.
+
+Secure and Streamlined Login:
+Implemented a robust email and password login system, fortified by the convenience of Google social login, prioritizing user privacy and ease of access.
+
+Dynamic Database Integration:
+Leveraged MongoDB to establish a dynamic and scalable database foundation, optimizing data management for streamlined hotel operations.
+
+User-Centric Interface:
+Engineered a user-friendly design, harmonizing functionality and aesthetics to create a welcoming and efficient online space for hotel management.
+
+Captivating Typing Effect:
+Pioneered a unique typing effect on the homepage title, adding a touch of sophistication and uniqueness to the website's first impression.
+
+Innovative Reputation Chart:
+Introduced a distinctive reputation chart on the About page, providing users with a visual representation of the hotel's standing and enhancing transparency.
+
+Empowering User Reviews:
+Implemented a feature enabling users to post reviews after booking, fostering an engaged community and authentic feedback loop.
+
+Stunning Visual Gallery:
+Curated a beautiful and immersive gallery, showcasing the hotel's ambiance and amenities to captivate potential guests and elevate the online presence.
 </p>
 <hr>
 <h1>
