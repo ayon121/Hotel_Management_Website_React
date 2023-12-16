@@ -9,13 +9,29 @@
     Features
 </h1>
 <p>
-    1. Responsive <br>
-    2. Login with Email & Password <br>
-    3. Social Login(Google) <br>
-    4. Database(mongodb) <br>
-    5. User Friendly <br>
-    6. Typing Effect on title in Home Page(Unique Feature)<br>
-    7. Reputation Chart On About Page(Unique Feature)
+    Responsive Design Excellence:<br/>
+    Crafted an intuitively responsive interface, ensuring a flawless user experience across diverse devices, from desktops to smartphones.<br/>
+
+    Secure and Streamlined Login: <br/>
+    Implemented a robust email and password login system, fortified by the convenience of Google social login, prioritizing user privacy and ease of access.<br/>
+
+    Dynamic Database Integration: <br/>
+    Leveraged MongoDB to establish a dynamic and scalable database foundation, optimizing data management for streamlined hotel operations.<br/>
+
+    User-Centric Interface:<br/>
+    Engineered a user-friendly design, harmonizing functionality and aesthetics to create a welcoming and efficient online space for hotel management.<br/>
+
+    Captivating Typing Effect:<br/>
+    Pioneered a unique typing effect on the homepage title, adding a touch of sophistication and uniqueness to the website's first impression.<br/>
+
+    Innovative Reputation Chart: <br/>
+    Introduced a distinctive reputation chart on the About page, providing users with a visual representation of the hotel's standing and enhancing transparency.<br/>
+
+    Empowering User Reviews:<br/>
+    Implemented a feature enabling users to post reviews after booking, fostering an engaged community and authentic feedback loop.<br/>
+
+    Stunning Visual Gallery: <br/>
+    Curated a beautiful and immersive gallery, showcasing the hotel's ambiance and amenities to captivate potential guests and elevate the online presence. <br/>
 </p>
 <hr>
 <h1>
